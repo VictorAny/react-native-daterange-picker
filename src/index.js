@@ -96,7 +96,9 @@ const DateRangePicker = ({
 
   const onOpen = () => {
     setIsOpen(true);
-    onOpenTriggered()
+    if (onOpenTriggered) {
+      onOpenTriggered()
+    }
   };
 
   const onClose = () => {
@@ -107,7 +109,9 @@ const DateRangePicker = ({
         endDate: startDate,
       });
     }
-    onCloseTriggered()
+    if (onCloseTriggered) {
+      onCloseTriggered()
+    }
   };
 
   const previousMonth = () => {
