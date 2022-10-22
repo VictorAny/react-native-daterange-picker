@@ -47,6 +47,8 @@ const DateRangePicker = ({
   buttonTextStyle,
   presetButtons,
   open,
+  onOpenTriggered,
+  onCloseTriggered
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [weeks, setWeeks] = useState([]);
@@ -94,6 +96,7 @@ const DateRangePicker = ({
 
   const onOpen = () => {
     setIsOpen(true);
+    onOpenTriggered()
   };
 
   const onClose = () => {
@@ -104,6 +107,7 @@ const DateRangePicker = ({
         endDate: startDate,
       });
     }
+    onCloseTriggered()
   };
 
   const previousMonth = () => {
